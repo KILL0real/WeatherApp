@@ -1,0 +1,68 @@
+.selectWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+}
+
+.inputWrapper {
+  display: flex;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  gap: 0.5rem;
+}
+
+.input {
+  background: transparent;
+  border: none;
+  color: white;
+  outline: none;
+  width: 100%;
+  font-size: 1rem;
+
+  &::-webkit-input-placeholder {
+    color: #999;
+  }
+
+  &::-moz-placeholder {
+    color: #999;
+  }
+
+  &:-ms-input-placeholder {
+    color: #999;
+  }
+
+  &::-ms-input-placeholder {
+    color: #999;
+  }
+
+  &::placeholder {
+    color: #999;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1e1e1e;
+  color: white;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+  padding: 0.5rem 0;
+  max-height: 200px;
+  overflow-y: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.option {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #333;
+  }
+}

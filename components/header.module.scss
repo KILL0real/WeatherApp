@@ -1,0 +1,35 @@
+@import "/styles/partials/variables";
+@import "/styles/partials/mixins";
+
+.header {
+  &__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__buttons {
+    display: flex;
+    gap: 14px;
+  }
+  &__button {
+    background-color: $components-background;
+    border: none;
+    border-radius: 100%;
+    padding: 13px;
+    height: 50px;
+    cursor: pointer;
+  }
+  &__Item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-left: 14px;
+  }
+  &__location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: $sizeL;
+    color: $white;
+  }
+}

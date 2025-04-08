@@ -1,0 +1,5 @@
+# Створи .gitignore або додай до нього:
+node_modules
+.env
+.next
+*.log

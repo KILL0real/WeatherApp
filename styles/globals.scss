@@ -1,0 +1,24 @@
+@import "/styles/partials/variables";
+@import "/styles/partials/mixins";
+@import "/styles/partials/reset";
+
+// styles/globals.scss
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+}
+
+html.dark {
+  --bg-color: #0e0e11;
+  --text-color: #ffffff;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  padding: 26px 24px;
+}
