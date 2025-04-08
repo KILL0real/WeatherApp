@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import styles from "./SearchSelect.module.scss";
+import styles from "./searchSelect.module.scss";
 
 const options = ["Kyiv", "Lviv", "Odesa", "Kharkiv", "Dnipro"];
 
