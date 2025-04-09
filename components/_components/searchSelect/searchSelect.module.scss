@@ -1,7 +1,17 @@
+@import "/styles/partials/mixins";
+// @import "/styles/partials/variables";
+
 .selectWrapper {
   position: relative;
   width: 100%;
   min-width: 492px;
+  @include lg {
+    width: auto;
+    min-width: 0px;
+  }
+  @include md {
+    display: none;
+  }
 }
 
 .inputWrapper {

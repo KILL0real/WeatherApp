@@ -10,3 +10,78 @@ $sizeXS: 12px;
 
 //colors
 $white: #ffffff;
+
+// Global params
+
+$os-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+$font-weight-primary: 400 !default;
+
+// Media
+$desktop-width-1600: 1600px;
+$desktop-width-1400: 1400px;
+$desktop-width: 1200px;
+$sm-desktop-width: 1024px;
+$tablet-width: 767px;
+$sm-tablet-width: 640px;
+$phone-width: 500px;
+$sm-phone-width: 375px;
+
+// Main Colors
+$chathams-blue: #144162;
+$firefly: #091520;
+$goldenGlow: #fde89d;
+$palmGreen: #06200c;
+$green: #68ef85;
+$light-blue: #b4f1ff;
+$red: #ff6b6b;
+$white: #ffffff;
+$rare-solid: hsla(356, 72%, 57%, 1);
+
+// Deprecated
+// $body: #14151b;
+// $black: #101014;
+// $accent: #ffff37;
+// $secondary1: #7430ff;
+// $secondary2: #00ff93;
+// $grayDark: #202127;
+// $gray: #2c2d32;
+// $grayLight: #909093;
+// $blackLight: #14151b;
+
+// sizes
+// $rfs-breakpoint: 1280px;
+// $roulette-container-height: 260px;
+
+// Colors with opacity
+$trans-white-10: rgba(255, 255, 255, 0.1);
+$trans-white-20: rgba(255, 255, 255, 0.2);
+$trans-white-30: rgba(255, 255, 255, 0.3);
+$trans-white-40: rgba(255, 255, 255, 0.4);
+$trans-white-50: rgba(255, 255, 255, 0.5);
+$trans-white-60: rgba(255, 255, 255, 0.6);
+$trans-white-70: rgba(255, 255, 255, 0.7);
+$trans-white-80: rgba(255, 255, 255, 0.8);
+$trans-white-90: rgba(255, 255, 255, 0.9);
+
+$trans-firefly-10: rgba(9, 21, 32, 0.1);
+$trans-firefly-20: rgba(9, 21, 32, 0.2);
+$trans-firefly-30: rgba(9, 21, 32, 0.3);
+$trans-firefly-40: rgba(9, 21, 32, 0.4);
+$trans-firefly-50: rgba(9, 21, 32, 0.5);
+$trans-firefly-60: rgba(9, 21, 32, 0.6);
+$trans-firefly-70: rgba(9, 21, 32, 0.7);
+$trans-firefly-80: rgba(9, 21, 32, 0.8);
+$trans-firefly-90: rgba(9, 21, 32, 0.9);
+
+// Header
+$header-height: 233px;
+
+// Rarities
+$rarity-common: rgba(228, 230, 219, 1);
+$rarity-uncommon: rgba(55, 151, 220, 1);
+$rarity-rare: rgba(56, 131, 148, 1);
+$rarity-mythical: rgba(113, 56, 148, 1);
+$rarity-legendary: rgba(206, 52, 191, 1);
+$rarity-ancient: rgba(224, 66, 76, 1);
+$rarity-exotic: rgba(148, 106, 56, 1);

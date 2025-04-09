@@ -1,0 +1,119 @@
+@import "/styles/partials/variables";
+
+@mixin center-flex() {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// extra small
+@mixin xs() {
+  @media only screen and (max-width: #{$phone-width}) {
+    @content;
+  }
+}
+
+// small
+@mixin sm() {
+  @media only screen and (max-width: #{$tablet-width}) {
+    @content;
+  }
+}
+
+// medium
+@mixin md() {
+  @media only screen and (max-width: #{$sm-desktop-width}) {
+    @content;
+  }
+}
+
+// large
+@mixin lg() {
+  @media only screen and (max-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+// large
+@mixin lg-1400() {
+  @media only screen and (max-width: #{$desktop-width-1400}) {
+    @content;
+  }
+}
+
+// large
+@mixin lg-1600() {
+  @media only screen and (max-width: #{$desktop-width-1600}) {
+    @content;
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+@mixin hide-scroll() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+$browser-context: 16;
+
+@function rem($pixels, $context: $browser-context) {
+  @if (math.is-unitless($pixels)) {
+    $pixels: $pixels * 1px;
+  }
+
+  @if (math.is-unitless($context)) {
+    $context: $context * 1px;
+  }
+
+  @return calc($pixels / $context) * 1rem;
+}
+
+@mixin font($font-size, $line-height: false, $font-weight: false) {
+  @if (math.unit($font-size) != "px") {
+    font-size: $font-size;
+  } @else {
+    font-size: rem($font-size);
+  }
+
+  @if $line-height !=false {
+    // @if (math.unit($line-height) !='px') {
+    //   @include rfs($line-height * 1px, "line-height")
+    // }
+
+    // @else {
+    line-height: $line-height;
+    // }
+  } @else {
+    line-height: 1;
+  }
+
+  @if $font-weight !=false {
+    font-weight: $font-weight;
+  }
+}
+
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin hidden() {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+@mixin line-clamp($count) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: $count;
+  line-clamp: $count;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

@@ -23,13 +23,14 @@
     display: flex;
     align-items: center;
     gap: 14px;
-    padding-left: 14px;
   }
   &__location {
     display: flex;
     align-items: center;
     gap: 10px;
     font-size: $sizeL;
-    color: $white;
+    @include sm {
+      display: none;
+    }
   }
 }

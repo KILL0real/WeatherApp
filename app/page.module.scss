@@ -1,0 +1,16 @@
+@import "/styles/partials/variables";
+@import "/styles/partials/mixins";
+
+.weather {
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    @include sm {
+      justify-content: center;
+    }
+
+    padding-top: 30px;
+    gap: 28px;
+  }
+}

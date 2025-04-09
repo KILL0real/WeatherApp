@@ -1,0 +1,66 @@
+// components/WeatherTabs/WeatherTabs.module.scss
+@import "/styles/partials/mixins";
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  color: var(--text-color);
+}
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  @include sm {
+    flex-wrap: wrap;
+  }
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  button {
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    border: none;
+    background: var(--tab-bg);
+    color: var(--tab-color);
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+      background: var(--tab-hover);
+    }
+  }
+
+  .active {
+    background: var(--tab-active);
+    color: var(--tab-active-color);
+  }
+}
+
+.cardFlex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 39px;
+  width: 100%;
+  margin: 0 auto;
+  @include sm {
+    justify-content: center;
+  }
+  @include xs {
+    gap: 15px;
+  }
+}
+.content {
+  display: flex;
+  justify-content: start;
+  gap: 30px;
+  @include lg {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+  @include sm {
+    justify-content: center;
+  }
+}

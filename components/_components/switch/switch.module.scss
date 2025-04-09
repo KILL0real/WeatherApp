@@ -1,0 +1,36 @@
+.switch {
+  position: relative;
+  display: flex;
+  width: 163px;
+  height: 34px;
+  background-color: #1a1a1d;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background-color: #bbd7ec;
+  border-radius: 9999px;
+  transition: transform 0.3s ease;
+  z-index: 1;
+}
+
+.button {
+  flex: 1;
+  border: none;
+  background: transparent;
+  color: #999;
+  font-size: 14px;
+  z-index: 2;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.active {
+  color: #000;
+}
