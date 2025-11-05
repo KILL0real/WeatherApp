@@ -2,35 +2,80 @@
 @import "/styles/partials/mixins";
 
 .header {
-  &__wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  &__buttons {
-    display: flex;
-    gap: 14px;
-  }
-  &__button {
-    background-color: $components-background;
-    border: none;
-    border-radius: 100%;
-    padding: 13px;
-    height: 50px;
-    cursor: pointer;
-  }
-  &__Item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
-  &__location {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: $sizeL;
-    @include sm {
-      display: none;
+    &__wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
     }
-  }
+
+    &__buttons {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        gap: 14px;
+
+        :hover {
+            background-color: var(--tab-hover);
+            -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+            -o-transition: background-color 0.3s ease, color 0.3s ease;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+    }
+
+    &__button {
+        background-color: var(--card-bg);
+        -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        border: none;
+        border-radius: 100%;
+        padding: 13px;
+        height: 50px;
+        cursor: pointer;
+
+        &:active {
+            background-color: #dbeafe;
+        }
+    }
+
+
+
+    .icon {
+        color: var(--icon-color);
+
+        &:active {
+            background-color: #dbeafe;
+        }
+
+    }
+
+    &__Item {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 14px;
+    }
+
+    &__location {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 10px;
+        font-size: $sizeL;
+
+        @include sm {
+            display: none;
+        }
+    }
 }

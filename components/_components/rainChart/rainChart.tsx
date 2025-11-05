@@ -1,16 +1,16 @@
 "use client";
 
-import {
-  LineChart,
-  Line,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-  Bar,
-  CartesianGrid,
-} from "recharts";
 import { useEffect, useState } from "react";
+import {
+    Bar,
+    CartesianGrid,
+    Line,
+    LineChart,
+    ResponsiveContainer,
+    Tooltip,
+    XAxis,
+    YAxis,
+} from "recharts";
 
 const data = [
   { time: "10AM", value: 60 },
@@ -21,9 +21,11 @@ const data = [
   { time: "03PM", value: 30 },
 ];
 
-export default function RainChart() {
-  const [textColor, setTextColor] = useState("#000");
+export default function RainChart({view="weak"}) {
 
+
+  const [textColor, setTextColor] = useState("#000");
+const isWide = view !== "week"
   useEffect(() => {
     const getColor = () => {
       const root = document.documentElement;
@@ -47,15 +49,15 @@ export default function RainChart() {
   const gridColor = textColor === "#ffffff" ? "#333" : "#ddd";
 
   return (
-    <div
+       <div
       style={{
         width: "100%",
-        minWidth: 297,
-        maxWidth: 350,
         height: 300,
+        maxWidth: isWide ? "100%" : 350,
         display: "flex",
         flexDirection: "column",
         gap: 30,
+        transition: "max-width 0.3s ease",
       }}
     >
       <h2 style={{ margin: 0, paddingLeft: 6, color: textColor }}>

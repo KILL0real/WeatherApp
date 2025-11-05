@@ -4,44 +4,49 @@
 
 // styles/globals.scss
 :root {
-  --bg-color: #ffffff;
-  --text-color: #000000;
-  --card-bg: #f4f4f4;
-  --text-color: #000;
-  --tab-bg: #e0e0e0;
-  --tab-color: #333;
-  --tab-hover: #d0d0d0;
-  --tab-active: #333;
-  --tab-active-color: #fff;
-  --main-card-bg: #f0f0f0;
-  --card-bg: #ffffff;
-  --text-color: #000000;
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-bg: #f4f4f4;
+    --text-color: #000;
+    --tab-bg: #e0e0e0;
+    --tab-color: #333;
+    --tab-hover: #d0d0d0;
+    --tab-active: #dbeafe;
+    --tab-active-color: #fff;
+    --main-card-bg: #f0f0f0;
+    --card-bg: #ffffff;
+    --text-color: #000000;
+    --icon-color: #1E90FF;
 }
 
 html.dark {
-  --bg-color: #0e0e11;
-  --text-color: #ffffff;
-  --card-bg: #1c1c1c;
-  --text-color: #fff;
-  --tab-bg: #2c2c2c;
-  --tab-color: #aaa;
-  --tab-hover: #3c3c3c;
-  --tab-active: #fff;
-  --tab-active-color: #000;
-  --main-card-bg: #2c2f35;
-  --card-bg: #1a1a1d;
-  --text-color: #ffffff;
+    --bg-color: #0e0e11;
+    --text-color: #ffffff;
+    --card-bg: #1c1c1c;
+    --text-color: #fff;
+    --tab-bg: #2c2c2c;
+    --tab-color: #aaa;
+    --tab-hover: #3c3c3c;
+    --tab-active: #fff;
+    --tab-active-color: #000;
+    --main-card-bg: #2c2f35;
+    --card-bg: #1a1a1d;
+    --text-color: #ffffff;
+    --icon-color: #ffffff;
 }
 
 body {
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  margin: 0;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin: 0;
+
 }
 
 .container {
-  padding: 26px 24px;
-  max-width: 1800px;
-  margin: 0 auto;
+    padding: 26px 24px;
+    max-width: 1800px;
+    margin: 0 auto;
 }

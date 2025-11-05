@@ -1,66 +1,110 @@
 // components/WeatherTabs/WeatherTabs.module.scss
 @import "/styles/partials/mixins";
+
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  color: var(--text-color);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    gap: 30px;
+    color: var(--text-color);
 }
+
 .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-  @include sm {
-    flex-wrap: wrap;
-  }
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    gap: 30px;
+
+    @include sm {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    }
 }
 
 .tabs {
-  display: flex;
-  gap: 15px;
-  button {
-    padding: 0.5rem 1rem;
-    border-radius: 1rem;
-    border: none;
-    background: var(--tab-bg);
-    color: var(--tab-color);
-    cursor: pointer;
-    transition: 0.2s;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    gap: 15px;
 
-    &:hover {
-      background: var(--tab-hover);
+    button {
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        border: none;
+        background: var(--card-bg);
+        color: gray;
+        cursor: pointer;
+        -webkit-transition: 0.2s;
+        -o-transition: 0.2s;
+        transition: 0.2s;
+        -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+        &:hover {
+            background: var(--tab-hover);
+        }
     }
-  }
 
-  .active {
-    background: var(--tab-active);
-    color: var(--tab-active-color);
-  }
+    .active {
+        background: #dbeafe;
+        color: #000000;
+        -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
 }
 
 .cardFlex {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 39px;
-  width: 100%;
-  margin: 0 auto;
-  @include sm {
-    justify-content: center;
-  }
-  @include xs {
-    gap: 15px;
-  }
-}
-.content {
-  display: flex;
-  justify-content: start;
-  gap: 30px;
-  @include lg {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    flex-direction: row;
-  }
-  @include sm {
-    justify-content: center;
-  }
+    gap: 39px;
+    width: 100%;
+    margin: 0 auto;
+
+    @include sm {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+
+    @include xs {
+        gap: 15px;
+    }
+}
+
+.content {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start;
+    gap: 30px;
+
+    @include lg {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        -webkit-box-orient: horizontal;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+        flex-direction: row;
+    }
+
+    @include sm {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
 }

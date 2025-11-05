@@ -1,29 +1,41 @@
 .toggle {
-  width: 115px;
-  min-height: 46px;
-  border-radius: 9999px;
-  border: 1px solid #4b5563;
-  background-color: #1a1a1d;
-  position: relative;
-  padding: 0;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
+    width: 115px;
+    min-height: 46px;
+    border-radius: 9999px;
+    border: 1px solid transparent;
+    background-color: var(--card-bg);
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    position: relative;
+    padding: 0;
+    -webkit-transition: background-color 0.3s ease;
+    -o-transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
 }
 
 .circle {
-  width: 40px;
-  height: 40px;
-  background-color: #dbeafe;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-  transition: left 0.3s ease;
+    width: 40px;
+    height: 40px;
+    background-color: #dbeafe;
+    border-radius: 50%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    -webkit-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    transition: left 0.3s ease;
 }
 
 .active .circle {
-  left: 70px;
+    left: 70px;
 }

@@ -2,77 +2,93 @@
 // @import "/styles/partials/variables";
 
 .selectWrapper {
-  position: relative;
-  width: 100%;
-  min-width: 492px;
-  @include lg {
-    width: auto;
-    min-width: 0px;
-  }
-  @include md {
-    display: none;
-  }
+    position: relative;
+    width: 100%;
+    min-width: 492px;
+
+    @include lg {
+        width: auto;
+        min-width: 0px;
+    }
+
+    @include md {
+        display: none;
+    }
+}
+
+.icon {
+
+    color: var(--icon-color);
+
 }
 
 .inputWrapper {
-  display: flex;
-  align-items: center;
-  background-color: #1e1e1e;
-  padding: 0.75rem 1rem;
-  border-radius: 8px;
-  gap: 0.5rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: var(--card-bg);
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    gap: 0.5rem;
 }
 
 .input {
-  background: transparent;
-  border: none;
-  color: white;
-  outline: none;
-  width: 100%;
-  font-size: 1rem;
+    background: var(--card-bg);
+    border: none;
+    color: var(--text-color);
+    outline: none;
+    width: 100%;
+    font-size: 1rem;
+    cursor: pointer;
 
-  &::-webkit-input-placeholder {
-    color: #999;
-  }
+    &::-webkit-input-placeholder {
+        color: var(--tab-color);
+    }
 
-  &::-moz-placeholder {
-    color: #999;
-  }
+    &::-moz-placeholder {
+        color: var(--tab-color);
+    }
 
-  &:-ms-input-placeholder {
-    color: #999;
-  }
+    &:-ms-input-placeholder {
+        color: var(--tab-color);
+    }
 
-  &::-ms-input-placeholder {
-    color: #999;
-  }
+    &::-ms-input-placeholder {
+        color: var(--tab-color);
+    }
 
-  &::placeholder {
-    color: #999;
-  }
+    &::placeholder {
+        color: var(--tab-color);
+    }
 }
 
 .dropdown {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  right: 0;
-  background: #1e1e1e;
-  color: white;
-  border-radius: 8px;
-  margin-top: 0.5rem;
-  padding: 0.5rem 0;
-  max-height: 200px;
-  overflow-y: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  z-index: 10;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-color);
+    color: var(--text-color);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 0.5rem 0;
+    max-height: 200px;
+    overflow-y: auto;
+    -webkit-box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 10;
 }
 
 .option {
-  padding: 0.5rem 1rem;
-  cursor: pointer;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
 
-  &:hover {
-    background-color: #333;
-  }
+    &:hover {
+        background-color: var(--tab-hover);
+    }
 }

@@ -1,0 +1,61 @@
+@import "/styles/partials/variables";
+@import "/styles/partials/mixins";
+
+.card {
+
+    background-color: var(--card-bg);
+    display: -webkit-box;
+    -webkit-box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+
+    -webkit-transition: background-color 0.3s ease, color 0.3s ease;
+
+    -o-transition: background-color 0.3s ease, color 0.3s ease;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 16px 25px;
+    border-radius: 15px;
+    gap: 10px;
+    max-width: 320px;
+
+}
+
+.cardTop {}
+
+.label {
+    font-size: $sizeS;
+    color: #777777;
+    margin: 0;
+}
+
+.cardMiddle {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.title {
+    font-size: $sizeXL;
+    margin: 0;
+
+}
+
+.cardBottom {}
+
+.subTitle {
+
+    font-size: $sizeS;
+    margin: 0;
+}
