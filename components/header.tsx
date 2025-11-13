@@ -1,10 +1,15 @@
+"use client";
+import { useCity } from "../app/context/CityContext";
+
 import { Bell, LayoutGrid, MapPin } from "lucide-react";
 import Image from "next/image";
 import styles from "../components/header.module.scss";
 import SearchSelect from "./_components/searchSelect/searchSelect";
 import ThemeToggle from "./_components/themeToggle/themeTooggle";
 import UserAvatar from "./_components/UserAvatar/userAvatar";
+
 export default function header() {
+	const { city, country } = useCity();
 	return (
 		<header className={styles.header}>
 			<div className={styles.header__wrapper}>
@@ -20,7 +25,7 @@ export default function header() {
 
 					<span className={styles.header__location}>
 						<MapPin className={styles.icon} />
-						Dhaka,Bangladesh
+						{city && country ? `${city},${country}` : "No location selected"}
 					</span>
 				</div>
 				<div>

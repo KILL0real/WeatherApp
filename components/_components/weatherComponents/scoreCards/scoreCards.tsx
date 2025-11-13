@@ -7,7 +7,7 @@ type CardProps = {
 	description: string;
 	details: string;
 	image: string;
-	footerPosition: "center" | "default";
+	footerPosition?: "center" | "default";
 	type: "wind" | "uv" | "humidity" | "visibility";
 };
 export const Card: React.FC<CardProps> = ({
@@ -34,15 +34,7 @@ export const Card: React.FC<CardProps> = ({
 					<>
 						<span className={styles.desc}> {description}</span>
 
-						<span className={styles.det}>
-							<Image
-								src="/images/icons/eye.svg"
-								alt="eye"
-								width={24}
-								height={24}
-							/>
-							{details}
-						</span>
+						<span className={styles.det}>{details}</span>
 					</>
 				)}
 			</div>

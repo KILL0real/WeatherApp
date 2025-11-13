@@ -1,27 +1,36 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo } from "react";
 import Switch from "../../switch/switch";
 import TodayWeatherCard from "../MainWeatherCards/todayWeatherCard";
-import TomorrowWeatherCard from "../MainWeatherCards/tomorrowWeatherCard";
 import WeatherCard from "../weatherCard/weatherCard";
 import styles from "./weatherTabs.module.scss";
 
-const mockData = [
-	{ day: "FRI", temp: 16, icon: "/images/Icons/Sunny.svg" },
-	{ day: "SAT", temp: 10, icon: "/images/Icons/Rainy-Sunny.svg" },
-	{ day: "SUN", temp: 15, icon: "/images/Icons/Sunny.svg" },
-	{ day: "MON", temp: 11, icon: "/images/Icons/Sunny2.svg" },
-	{ day: "TUE", temp: 10, icon: "/images/Icons/Rainy.svg" },
-	{ day: "WED", temp: 12, icon: "/images/Icons/RainySunny1.svg" },
-	{ day: "THU", temp: 10, icon: "/images/Icons/Windy.svg" },
-];
-
 interface WeatherTabsProps {
-	activeTab: "today" | "tomorrow" | "week";
-	setActiveTab: (tab: "today" | "tomorrow" | "week") => void;
+	activeTab: "today" | "week";
+	setActiveTab: (tab: "today" | "week") => void;
+	data?: any;
+	todayInfo?: any;
 }
-export default function WeatherTabs({ activeTab, setActiveTab }: WeatherTabsProps) {
+export default function WeatherTabs({
+	activeTab,
+	setActiveTab,
+	data,
+	todayInfo,
+}: WeatherTabsProps) {
+	const dailyForecast = useMemo(() => {
+		if (!data?.list) return [] as any;
+		const grouped: Record<string, any[]> = data.list.reduce(
+			(acc: Record<string, any[]>, item: any) => {
+				const date = new Date(item.dt * 1000).toLocaleDateString("en-GB");
+				if (!acc[date]) acc[date] = [];
+				acc[date].push(item);
+				return acc;
+			},
+			{},
+		);
+		return Object.values(grouped);
+	}, [data]);
 	return (
 		<div className={styles.container}>
 			<div className={styles.wrapper}>
@@ -32,12 +41,7 @@ export default function WeatherTabs({ activeTab, setActiveTab }: WeatherTabsProp
 					>
 						Today
 					</button>
-					<button
-						onClick={() => setActiveTab("tomorrow")}
-						className={activeTab === "tomorrow" ? styles.active : ""}
-					>
-						Tomorrow
-					</button>
+
 					<button
 						onClick={() => setActiveTab("week")}
 						className={activeTab === "week" ? styles.active : ""}
@@ -49,19 +53,39 @@ export default function WeatherTabs({ activeTab, setActiveTab }: WeatherTabsProp
 			</div>
 
 			<div className={styles.content}>
-				{activeTab === "today" && <TodayWeatherCard />}
-				{activeTab === "tomorrow" && <TomorrowWeatherCard />}
+				{activeTab === "today" && (
+					<TodayWeatherCard
+						data={data}
+						todayInfo={todayInfo}
+					/>
+				)}
 
 				{activeTab === "week" && (
 					<>
-						<TodayWeatherCard />
+						<TodayWeatherCard
+							data={data}
+							todayInfo={todayInfo}
+						/>
 						<div className={styles.cardFlex}>
-							{mockData.slice(1).map((item, index) => (
-								<WeatherCard
-									key={index}
-									data={item}
-								/>
-							))}
+							{dailyForecast.slice(0, 6).map((day: any, index: number) => {
+								const item = day[Math.floor(day.length / 2)]; // беремо середину дня
+								const temp = Math.round(item.main.temp);
+								const icon = `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`;
+								const weekday = new Date(item.dt * 1000).toLocaleDateString("en-US", {
+									weekday: "short",
+								});
+
+								return (
+									<WeatherCard
+										key={index}
+										data={{
+											day: weekday,
+											temp,
+											icon,
+										}}
+									/>
+								);
+							})}
 						</div>
 					</>
 				)}
