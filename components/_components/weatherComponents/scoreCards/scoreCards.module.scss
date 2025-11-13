@@ -32,12 +32,18 @@
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    gap: 100px;
 
-    -webkit-box-pack: justify;
 
-    -ms-flex-pack: justify;
+    -webkit-box-pack: center;
 
-    justify-content: space-between;
+
+
+    -ms-flex-pack: center;
+
+
+
+    justify-content: center;
 
 
 }

@@ -1,12 +1,13 @@
 "use client";
 import { Search } from "lucide-react";
-import Image from "next/image";
 import { useState } from "react";
+import { useCity } from "../../../app/context/CityContext";
 import styles from "./searchSelect.module.scss";
 
 const options = ["Kyiv", "Lviv", "Odesa", "Kharkiv", "Dnipro"];
 
-const SearchSelect = () => {
+export default function SearchSelect() {
+	const { setCity } = useCity();
 	const [query, setQuery] = useState("");
 	const [filtered, setFiltered] = useState(options);
 	const [isOpen, setIsOpen] = useState(false);
@@ -14,17 +15,29 @@ const SearchSelect = () => {
 	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
 		const value = e.target.value;
 		setQuery(value);
-		setFiltered(options.filter((city) => city.toLowerCase().includes(value.toLowerCase())));
+		setFiltered(options.filter((c) => c.toLowerCase().includes(value.toLowerCase())));
 		setIsOpen(true);
 	};
 
 	const handleSelect = (value: string) => {
 		setQuery(value);
 		setIsOpen(false);
+		setCity(value); // <- обновляем глобальный город
+	};
+
+	const handleSubmit = (e: React.FormEvent) => {
+		e.preventDefault();
+		if (query.trim()) {
+			setCity(query.trim());
+			setIsOpen(false);
+		}
 	};
 
 	return (
-		<div className={styles.selectWrapper}>
+		<form
+			onSubmit={handleSubmit}
+			className={styles.selectWrapper}
+		>
 			<div className={styles.inputWrapper}>
 				<Search className={styles.icon} />
 				<input
@@ -50,8 +63,6 @@ const SearchSelect = () => {
 					))}
 				</ul>
 			)}
-		</div>
+		</form>
 	);
-};
-
-export default SearchSelect;
+}
