@@ -1,6 +1,5 @@
 import path from "path";
 
-/** @type {import('next').NextConfig} */
 const nextConfig = {
 	images: {
 		remotePatterns: [
@@ -13,7 +12,7 @@ const nextConfig = {
 	},
 
 	sassOptions: {
-		includePaths: [path.join(process.cwd(), "styles")],
+		includePaths: [path.resolve("styles")],
 	},
 };
 
