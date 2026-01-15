@@ -1,16 +1,19 @@
-@import "/styles/partials/variables";
-.avatarBtn {
-  border-radius: 999px;
-  max-width: 40px;
-  max-height: 40px;
-  overflow: hidden;
-  padding: 0;
-  background-color: $components-background;
-  overflow: hidden;
-  border: 1px solid transparent;
-  transition: border 0.3s ease;
+@import "partials/variables";
 
-  &:hover {
-    border-color: #3b82f6;
-  }
+.avatarBtn {
+    border-radius: 999px;
+    max-width: 40px;
+    max-height: 40px;
+    overflow: hidden;
+    padding: 0;
+    background-color: $components-background;
+    overflow: hidden;
+    border: 1px solid transparent;
+    -webkit-transition: border 0.3s ease;
+    -o-transition: border 0.3s ease;
+    transition: border 0.3s ease;
+
+    &:hover {
+        border-color: #3b82f6;
+    }
 }
