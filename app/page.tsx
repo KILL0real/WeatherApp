@@ -125,7 +125,7 @@ export default function HomePage() {
 	const cards: CardData[] = [
 		{
 			title: "wind status",
-			image: "/images/Icons/WindSatusRectangle.svg",
+			image: "/images/Icons/WindStatusRectangle.svg",
 			description: windSpeed ? `${Math.round(windSpeed)}km/h` : "Немає данних",
 			details: windDeg != null ? getWindDirection(windDeg) : "—",
 			type: "wind" as const,
