@@ -125,7 +125,7 @@ export default function HomePage() {
 	const cards: CardData[] = [
 		{
 			title: "wind status",
-			image: "/images/icons/WindSatusRectangle.svg",
+			image: "/images/Icons/WindSatusRectangle.svg",
 			description: windSpeed ? `${Math.round(windSpeed)}km/h` : "Немає данних",
 			details: windDeg != null ? getWindDirection(windDeg) : "—",
 			type: "wind" as const,
@@ -182,7 +182,7 @@ export default function HomePage() {
 						activeTab={activeTab}
 						setActiveTab={setActiveTab}
 						data={weatherData}
-						todayInfo={currentWeather} // ✅ нове поле
+						todayInfo={currentWeather}
 					/>
 					<RainChart view={activeTab} />
 				</div>
