@@ -1,4 +1,5 @@
-/** @type {import('next').NextConfig} */
+import path from "path";
+
 const nextConfig = {
 	images: {
 		remotePatterns: [
@@ -9,6 +10,10 @@ const nextConfig = {
 			},
 		],
 	},
+
+	sassOptions: {
+		includePaths: [path.resolve("styles")],
+	},
 };
 
-module.exports = nextConfig;
+export default nextConfig;
