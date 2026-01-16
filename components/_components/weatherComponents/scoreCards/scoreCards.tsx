@@ -1,14 +1,16 @@
 import Image from "next/image";
-import { title } from "process";
 import styles from "./scoreCards.module.scss";
 
-type CardProps = {
+export type CardProps = {
 	title: string;
 	description: string;
 	details: string;
 	image: string;
 	footerPosition?: "center" | "default";
 	type: "wind" | "uv" | "humidity" | "visibility";
+};
+export type CardData = CardProps & {
+	id: string;
 };
 export const Card: React.FC<CardProps> = ({
 	title,

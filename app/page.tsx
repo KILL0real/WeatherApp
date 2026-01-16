@@ -3,6 +3,10 @@
 import { useEffect, useState } from "react";
 import RainChart from "../components/_components/rainChart/rainChart";
 import { MiniCards } from "../components/_components/weatherComponents/miniCards/miniCards";
+import type {
+	CardData,
+	CardProps,
+} from "../components/_components/weatherComponents/scoreCards/scoreCards";
 import { Card } from "../components/_components/weatherComponents/scoreCards/scoreCards";
 import WeatherTabs from "../components/_components/weatherComponents/weatherTabs/weatherTabs";
 import { useCity } from "./context/CityContext";
@@ -20,7 +24,6 @@ export default function HomePage() {
 
 	const popularCities = ["Kyiv", "London", "New York", "Tokyo"];
 
-	// ✅ 1. Отримуємо прогноз і поточну погоду одночасно
 	useEffect(() => {
 		if (!city) return;
 
@@ -69,7 +72,6 @@ export default function HomePage() {
 		fetchWeather();
 	}, [city]);
 
-	// ✅ 2. Популярні міста
 	useEffect(() => {
 		if (popularCities.length === 0) return;
 
@@ -106,7 +108,6 @@ export default function HomePage() {
 		);
 	}
 
-	// --- Секція Cards залишилась без змін ---
 	const today = weatherData?.list?.[0];
 	const windSpeed = today?.wind?.speed ?? null;
 	const windDeg = today?.wind.deg ?? null;
@@ -121,7 +122,7 @@ export default function HomePage() {
 		return dirs[Math.round(deg / 45) % 8];
 	};
 
-	const cards = [
+	const cards: CardData[] = [
 		{
 			title: "wind status",
 			image: "/images/icons/WindSatusRectangle.svg",
