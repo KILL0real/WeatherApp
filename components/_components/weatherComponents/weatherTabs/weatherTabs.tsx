@@ -68,7 +68,7 @@ export default function WeatherTabs({
 						/>
 						<div className={styles.cardFlex}>
 							{dailyForecast.slice(0, 6).map((day: any, index: number) => {
-								const item = day[Math.floor(day.length / 2)]; // беремо середину дня
+								const item = day[Math.floor(day.length / 2)];
 								const temp = Math.round(item.main.temp);
 								const icon = `https://openweathermap.org/img/wn/${item.weather[0].icon}@2x.png`;
 								const weekday = new Date(item.dt * 1000).toLocaleDateString("en-US", {
