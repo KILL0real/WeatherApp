@@ -5,13 +5,17 @@ The app allows users to check current weather conditions for different locations
 
 ---
 
-## 🚀 Tech Stack
+**Live Demo:**  
+https://weather-app-git-main-killreals-projects-50523581.vercel.app
 
-- **Next.js**
-- **React**
-- **TypeScript**
-- **CSS / Styling**
-- External Weather API
+---
+
+**Tech stack:**
+- Next.js (App Router)
+- TypeScript
+- SCSS Modules
+- OpenWeather API
+- Vercel
 
 ---
 
@@ -40,12 +44,6 @@ The app allows users to check current weather conditions for different locations
 - Fetching and handling data from external APIs  
 - Managing component state  
 - Building reusable UI components  
-
----
-
-## 📸 Screenshots
-
-*(You can add screenshots of the app here later)*
 
 ---
 
