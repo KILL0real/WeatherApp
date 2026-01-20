@@ -6,7 +6,8 @@ The app allows users to check current weather conditions for different locations
 ---
 
 **Live Demo:**  
-[https://weather-app-git-main-killreals-projects-50523581.vercel.app](https://user-admin-8dek.vercel.app)
+[[https://weather-app-git-main-killreals-projects-50523581.vercel.app](https://user-admin-8dek.vercel.app)](https://weather-app-red-beta-87.vercel.app)
+
 
 ---
 
